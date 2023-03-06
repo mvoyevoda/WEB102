@@ -67,3 +67,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+body {
+  background-image: url("./src/assets/roman_ruins.jpeg");
+  background-size: cover;
+  color: black;
+}
