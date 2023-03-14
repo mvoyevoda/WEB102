@@ -26,6 +26,7 @@ const Card = (props) => {
         setHistory([...history, element]);
     }
 
+    const [seen, setSeen] = useState(false)
     const [index, setIndex] = useState(0);
     const [begun, begin] = useState(false);
     const [display, changeDisplay] = useState(Object.keys(shuffledDictionary)[index]);
@@ -47,6 +48,7 @@ const Card = (props) => {
                 <div className='game'>
                     <div className="card" onClick={() => {
                         changeDisplay(display === Object.keys(shuffledDictionary)[index] ? shuffledDictionary[Object.keys(shuffledDictionary)[index]] : Object.keys(shuffledDictionary)[index]);
+                        setSeen(true)
                     }}>
                         <p>{display}</p>
                     </div>
@@ -72,24 +74,27 @@ const Card = (props) => {
                             onClick={() => {
                                 addHistory(Object.keys(shuffledDictionary)[index + 1]);
                                 setIndex(index + 1);
+                                setSeen(false)
                             }}
                         >
                             Next
                         </button>
                     }
-
-                    <form onSubmit={(e) => {
-                        e.preventDefault();
-                        if (guess === shuffledDictionary[Object.keys(shuffledDictionary)[index]]) {
-                            alert("Correct!");
-                        } else {
-                            alert("Incorrect. Try again.");
-                        }
-                        setGuess("");
-                    }}>
-                        <input className="input" type="text" value={guess} onChange={(e) => setGuess(e.target.value)} />
-                        <button type="submit">Submit</button>
-                    </form>
+                    {
+                        seen === false &&
+                        <form onSubmit={(e) => {
+                            e.preventDefault();
+                            if (guess === shuffledDictionary[Object.keys(shuffledDictionary)[index]]) {
+                                alert("Correct!");
+                            } else {
+                                alert("Incorrect. Try again.");
+                            }
+                            setGuess("");
+                        }}>
+                            <input className="input" type="text" value={guess} onChange={(e) => setGuess(e.target.value)} />
+                            <button type="submit">Submit</button>
+                        </form>
+                    }
 
                 </div>
             );
