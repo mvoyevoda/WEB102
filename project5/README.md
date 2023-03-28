@@ -6,6 +6,8 @@ This web app: Pet Browser
 
 Time spent: 4 hours spent in total
 
+**NOTE:** My API access key is probably expired by the time you are viewing this...
+
 ## Required Features
 
 The following **required** functionality is completed:
