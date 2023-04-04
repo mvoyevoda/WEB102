@@ -164,10 +164,10 @@ function App() {
                 mostCommonGender={mostCommonGender}
                 mostCommonAge={mostCommonAge}
               />
-<div className="graph-container">
-  <GenderFrequencyBarChart data={genderFrequencyData} />
-  <TypeFrequencyBarChart data={typeFrequencyData} />
-</div>
+              <div className="graph-container">
+                <GenderFrequencyBarChart data={genderFrequencyData} />
+                <TypeFrequencyBarChart data={typeFrequencyData} />
+              </div>
 
               <PetList pets={filteredPets} />
             </>
