@@ -14,7 +14,7 @@ The following **required** functionality is completed:
 - [x] **Clicking on an item in the list view displays more details about it**
 - [x] **Clicking on an item has a direct, unique link to that item's detail view page**
 
-
+..
 The following **optional** features are implemented:
 
 - [x] The site's customized dashboard contains more content that explains what is interesting about the data
